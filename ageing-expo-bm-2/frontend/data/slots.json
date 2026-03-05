@@ -1,0 +1,93 @@
+{
+  "ex-001": [
+    { "id": "s-001-060601", "event_date": "2026-05-06", "start_time": "10:00", "end_time": "10:30", "is_available": false },
+    { "id": "s-001-060602", "event_date": "2026-05-06", "start_time": "10:30", "end_time": "11:00", "is_available": false },
+    { "id": "s-001-060603", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-001-060604", "event_date": "2026-05-06", "start_time": "11:30", "end_time": "12:00", "is_available": true },
+    { "id": "s-001-060605", "event_date": "2026-05-06", "start_time": "12:00", "end_time": "12:30", "is_available": true },
+    { "id": "s-001-060607", "event_date": "2026-05-06", "start_time": "13:00", "end_time": "13:30", "is_available": false },
+    { "id": "s-001-060608", "event_date": "2026-05-06", "start_time": "13:30", "end_time": "14:00", "is_available": false },
+    { "id": "s-001-060609", "event_date": "2026-05-06", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-001-060610", "event_date": "2026-05-06", "start_time": "14:30", "end_time": "15:00", "is_available": false },
+    { "id": "s-001-060611", "event_date": "2026-05-06", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-001-060612", "event_date": "2026-05-06", "start_time": "15:30", "end_time": "16:00", "is_available": true },
+    { "id": "s-001-060613", "event_date": "2026-05-06", "start_time": "16:00", "end_time": "16:30", "is_available": false },
+    { "id": "s-001-060614", "event_date": "2026-05-06", "start_time": "16:30", "end_time": "17:00", "is_available": true },
+    { "id": "s-001-060615", "event_date": "2026-05-06", "start_time": "17:00", "end_time": "17:30", "is_available": true },
+    { "id": "s-001-060616", "event_date": "2026-05-06", "start_time": "17:30", "end_time": "18:00", "is_available": true },
+    { "id": "s-001-070601", "event_date": "2026-05-07", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-001-070602", "event_date": "2026-05-07", "start_time": "10:30", "end_time": "11:00", "is_available": false },
+    { "id": "s-001-070603", "event_date": "2026-05-07", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-001-070604", "event_date": "2026-05-07", "start_time": "11:30", "end_time": "12:00", "is_available": true },
+    { "id": "s-001-070605", "event_date": "2026-05-07", "start_time": "14:00", "end_time": "14:30", "is_available": false },
+    { "id": "s-001-070606", "event_date": "2026-05-07", "start_time": "14:30", "end_time": "15:00", "is_available": true },
+    { "id": "s-001-070607", "event_date": "2026-05-07", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-001-080601", "event_date": "2026-05-08", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-001-080602", "event_date": "2026-05-08", "start_time": "11:00", "end_time": "11:30", "is_available": false },
+    { "id": "s-001-080603", "event_date": "2026-05-08", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-001-080604", "event_date": "2026-05-08", "start_time": "15:00", "end_time": "15:30", "is_available": true }
+  ],
+  "ex-002": [
+    { "id": "s-002-060601", "event_date": "2026-05-06", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-002-060602", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": false },
+    { "id": "s-002-060603", "event_date": "2026-05-06", "start_time": "13:00", "end_time": "13:30", "is_available": true },
+    { "id": "s-002-060604", "event_date": "2026-05-06", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-002-060605", "event_date": "2026-05-06", "start_time": "15:30", "end_time": "16:00", "is_available": false },
+    { "id": "s-002-070601", "event_date": "2026-05-07", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-002-070602", "event_date": "2026-05-07", "start_time": "11:30", "end_time": "12:00", "is_available": true },
+    { "id": "s-002-070603", "event_date": "2026-05-07", "start_time": "14:00", "end_time": "14:30", "is_available": false },
+    { "id": "s-002-080601", "event_date": "2026-05-08", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-002-080602", "event_date": "2026-05-08", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-002-080603", "event_date": "2026-05-08", "start_time": "16:00", "end_time": "16:30", "is_available": true },
+    { "id": "s-002-080604", "event_date": "2026-05-08", "start_time": "17:00", "end_time": "17:30", "is_available": false }
+  ],
+  "ex-003": [
+    { "id": "s-003-060601", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": false },
+    { "id": "s-003-060602", "event_date": "2026-05-06", "start_time": "13:00", "end_time": "13:30", "is_available": true },
+    { "id": "s-003-060603", "event_date": "2026-05-06", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-003-070601", "event_date": "2026-05-07", "start_time": "10:00", "end_time": "10:30", "is_available": false },
+    { "id": "s-003-070602", "event_date": "2026-05-07", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-003-080601", "event_date": "2026-05-08", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-003-080602", "event_date": "2026-05-08", "start_time": "15:00", "end_time": "15:30", "is_available": true }
+  ],
+  "ex-004": [
+    { "id": "s-004-060601", "event_date": "2026-05-06", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-004-060602", "event_date": "2026-05-06", "start_time": "10:30", "end_time": "11:00", "is_available": true },
+    { "id": "s-004-060603", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": false },
+    { "id": "s-004-060604", "event_date": "2026-05-06", "start_time": "13:00", "end_time": "13:30", "is_available": true },
+    { "id": "s-004-060605", "event_date": "2026-05-06", "start_time": "14:00", "end_time": "14:30", "is_available": true },
+    { "id": "s-004-060606", "event_date": "2026-05-06", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-004-060607", "event_date": "2026-05-06", "start_time": "16:00", "end_time": "16:30", "is_available": false },
+    { "id": "s-004-060608", "event_date": "2026-05-06", "start_time": "17:00", "end_time": "17:30", "is_available": true },
+    { "id": "s-004-070601", "event_date": "2026-05-07", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-004-070602", "event_date": "2026-05-07", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-004-070603", "event_date": "2026-05-07", "start_time": "14:00", "end_time": "14:30", "is_available": false },
+    { "id": "s-004-070604", "event_date": "2026-05-07", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-004-080601", "event_date": "2026-05-08", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-004-080602", "event_date": "2026-05-08", "start_time": "13:00", "end_time": "13:30", "is_available": true }
+  ],
+  "ex-005": [
+    { "id": "s-005-060601", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-005-060602", "event_date": "2026-05-06", "start_time": "14:30", "end_time": "15:00", "is_available": false },
+    { "id": "s-005-070601", "event_date": "2026-05-07", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-005-080601", "event_date": "2026-05-08", "start_time": "13:00", "end_time": "13:30", "is_available": true },
+    { "id": "s-005-080602", "event_date": "2026-05-08", "start_time": "16:00", "end_time": "16:30", "is_available": true }
+  ],
+  "ex-006": [
+    { "id": "s-006-060601", "event_date": "2026-05-06", "start_time": "10:00", "end_time": "10:30", "is_available": false },
+    { "id": "s-006-060602", "event_date": "2026-05-06", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-006-060603", "event_date": "2026-05-06", "start_time": "13:30", "end_time": "14:00", "is_available": true },
+    { "id": "s-006-060604", "event_date": "2026-05-06", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-006-070601", "event_date": "2026-05-07", "start_time": "10:30", "end_time": "11:00", "is_available": true },
+    { "id": "s-006-070602", "event_date": "2026-05-07", "start_time": "14:00", "end_time": "14:30", "is_available": false },
+    { "id": "s-006-080601", "event_date": "2026-05-08", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-006-080602", "event_date": "2026-05-08", "start_time": "15:30", "end_time": "16:00", "is_available": true }
+  ],
+  "ex-007": [
+    { "id": "s-007-060601", "event_date": "2026-05-06", "start_time": "10:00", "end_time": "10:30", "is_available": true },
+    { "id": "s-007-060602", "event_date": "2026-05-06", "start_time": "13:00", "end_time": "13:30", "is_available": false },
+    { "id": "s-007-060603", "event_date": "2026-05-06", "start_time": "15:00", "end_time": "15:30", "is_available": true },
+    { "id": "s-007-070601", "event_date": "2026-05-07", "start_time": "11:00", "end_time": "11:30", "is_available": true },
+    { "id": "s-007-080601", "event_date": "2026-05-08", "start_time": "14:00", "end_time": "14:30", "is_available": true }
+  ]
+}

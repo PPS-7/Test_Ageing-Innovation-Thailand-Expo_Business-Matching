@@ -1,0 +1,191 @@
+// ── All UI strings — EN / TH ──────────────────────────────────────────────────
+// Ageing Innovation Expo 2026 · Business Matching Platform
+
+export const t = {
+  // ── Nav ──────────────────────────────────────────────────────────────────
+  nav_brand_line1:   { en: "AGEING INNOVATION EXPO", th: "AGEING INNOVATION EXPO" },
+  nav_brand_line2:   { en: "THAILAND 2026",          th: "ประเทศไทย 2026" },
+  nav_bm_label:      { en: "Business Matching",       th: "จับคู่ธุรกิจ" },
+  nav_directory:     { en: "Directory",               th: "รายชื่อ" },
+  nav_admin:         { en: "Admin",                   th: "แอดมิน" },
+  lang_en:           { en: "EN", th: "EN" },
+  lang_th:           { en: "TH", th: "TH" },
+
+  // ── Context bar breadcrumbs ───────────────────────────────────────────────
+  ctx_home:          { en: "ageinginnovationexpo.com", th: "ageinginnovationexpo.com" },
+  ctx_bm:            { en: "BUSINESS MATCHING",        th: "จับคู่ธุรกิจ" },
+  ctx_directory:     { en: "Exhibitor Directory",      th: "รายชื่อผู้แสดงสินค้า" },
+  ctx_profile:       { en: "Exhibitor Profile",        th: "โปรไฟล์ผู้แสดงสินค้า" },
+  ctx_booking:       { en: "Inquiry Form",             th: "แบบฟอร์มนัดหมาย" },
+  ctx_confirmation:  { en: "Booking Confirmed",        th: "ยืนยันการจองแล้ว" },
+  ctx_admin:         { en: "Organiser Dashboard",      th: "แดชบอร์ดผู้จัด" },
+
+  // ── Hero section ─────────────────────────────────────────────────────────
+  hero_eyebrow:     { en: "Business Matching Platform",         th: "แพลตฟอร์มจับคู่ธุรกิจ" },
+  hero_h1a:         { en: "Connect with",                       th: "เชื่อมต่อกับ" },
+  hero_h1b:         { en: "Innovators",                         th: "นักนวัตกรรม" },
+  hero_h1c:         { en: "in the Longevity Economy",           th: "ในเศรษฐกิจผู้มีอายุยืน" },
+  hero_sub:         { en: "Browse 300+ exhibitors · Book on-site meetings · No login required",
+                      th: "เรียกดูผู้แสดงสินค้ากว่า 300 ราย · นัดหมายล่วงหน้า · ไม่ต้องสมัครสมาชิก" },
+  hero_chip_dates:  { en: "6–8 May 2026",                       th: "6–8 พ.ค. 2569" },
+  hero_chip_venue:  { en: "Hall EH 103-104, BITEC Bangna",       th: "ฮอลล์ EH 103-104 ไบเทคบางนา" },
+  hero_chip_theme:  { en: "Longevity Meets Innovation",          th: "ความยืนยาวพบกับนวัตกรรม" },
+
+  // ── Search / filter ───────────────────────────────────────────────────────
+  search_placeholder: { en: "Search exhibitors by name, product or keyword…",
+                        th: "ค้นหาผู้แสดงสินค้าด้วยชื่อ สินค้า หรือคีย์เวิร์ด…" },
+  search_btn:        { en: "Search",                             th: "ค้นหา" },
+  filter_all:        { en: "All Categories",                     th: "ทุกหมวดหมู่" },
+  filter_health:     { en: "❤️ Longevity Health & Care",         th: "❤️ สุขภาพและการดูแลผู้สูงวัย" },
+  filter_active:     { en: "🏃 Active Ageing & Wellness",        th: "🏃 การมีชีวิตที่กระตือรือร้น" },
+  filter_smart:      { en: "🏙️ Smart Living & Business",         th: "🏙️ การใช้ชีวิตอัจฉริยะ" },
+
+  // ── Directory listing ─────────────────────────────────────────────────────
+  dir_heading:       { en: "Participating Exhibitors (Sellers)", th: "ผู้แสดงสินค้า (ผู้ขาย)" },
+  dir_count_suffix:  { en: "exhibitors",                         th: "ราย" },
+  card_slots_open:   { en: "slots open",                         th: "ช่วงเวลาว่าง" },
+  card_booth:        { en: "Booth",                              th: "บูธ" },
+  card_view_book:    { en: "View & Book →",                      th: "ดูและจอง →" },
+
+  // ── Exhibitor profile ─────────────────────────────────────────────────────
+  back_directory:    { en: "← Back to Exhibitor Directory",      th: "← กลับรายชื่อผู้แสดงสินค้า" },
+  profile_slots_avail: { en: "slots available this event",       th: "ช่วงเวลาว่าง" },
+  profile_session_tbc: { en: "Session: 30–45 min (TBC)",         th: "ระยะเวลา: 30–45 นาที (TBC)" },
+  profile_website:   { en: "Website",                            th: "เว็บไซต์" },
+
+  // ── Slot picker ───────────────────────────────────────────────────────────
+  slot_how_heading:  { en: "How to book:",                       th: "วิธีนัดหมาย:" },
+  slot_how_body:     { en: "Pick an available slot → fill your details → receive confirmation email with QR code. No login needed.",
+                       th: "เลือกช่วงเวลา → กรอกข้อมูล → รับอีเมลยืนยันพร้อม QR Code ไม่ต้องสมัครสมาชิก" },
+  slot_select_day:   { en: "Select Event Day",                   th: "เลือกวันที่" },
+  day_wed:           { en: "WED · MAY",                          th: "พ.ค. พุธ" },
+  day_thu:           { en: "THU · MAY",                          th: "พ.ค. พฤหัส" },
+  day_fri:           { en: "FRI · MAY",                          th: "พ.ค. ศุกร์" },
+  slot_available:    { en: "Available",                          th: "ว่าง" },
+  slot_booked:       { en: "Booked",                             th: "จองแล้ว" },
+  slot_selected:     { en: "Selected ✓",                         th: "เลือกแล้ว ✓" },
+  slot_legend_avail: { en: "Available",                          th: "ว่าง" },
+  slot_legend_sel:   { en: "Selected",                           th: "เลือกแล้ว" },
+  slot_legend_bkd:   { en: "Booked",                             th: "จองแล้ว" },
+  slot_no_slots:     { en: "No slots available on this day.",    th: "ไม่มีช่วงเวลาว่างในวันนี้" },
+  slot_proceed:      { en: "PROCEED TO INQUIRY FORM →",          th: "กรอกแบบฟอร์มนัดหมาย →" },
+  slot_select_first: { en: "Please select a time slot first.",   th: "กรุณาเลือกช่วงเวลาก่อน" },
+
+  // ── Booking form ──────────────────────────────────────────────────────────
+  back_profile:      { en: "← Back to Exhibitor Profile",        th: "← กลับหน้าผู้แสดงสินค้า" },
+  form_no_login:     { en: "No login required — Visitor (Buyer) booking. Fill in your details to confirm your session.",
+                       th: "ไม่ต้องสมัครสมาชิก — ผู้เข้าชม (ผู้ซื้อ) กรอกข้อมูลเพื่อยืนยันการนัดหมาย" },
+  form_session_label:{ en: "Your Selected Session",              th: "ช่วงเวลาที่เลือก" },
+  form_your_details: { en: "Your Details",                       th: "ข้อมูลของคุณ" },
+  form_details_sub:  { en: "Your information will be shared with the exhibitor so they can prepare for your meeting.",
+                       th: "ข้อมูลของคุณจะถูกส่งให้ผู้แสดงสินค้าเพื่อเตรียมตัวก่อนการประชุม" },
+  form_first_name:   { en: "First Name",                         th: "ชื่อ" },
+  form_last_name:    { en: "Last Name",                          th: "นามสกุล" },
+  form_org:          { en: "Organisation / Company",             th: "องค์กร / บริษัท" },
+  form_title:        { en: "Job Title",                          th: "ตำแหน่ง" },
+  form_email:        { en: "Email Address",                      th: "อีเมล" },
+  form_phone:        { en: "Phone Number",                       th: "เบอร์โทร" },
+  form_industry:     { en: "Industry Sector",                    th: "ภาคอุตสาหกรรม" },
+  form_country:      { en: "Country",                            th: "ประเทศ" },
+  form_topics:       { en: "Topics / Meeting Objectives",        th: "หัวข้อ / วัตถุประสงค์" },
+  form_topics_ph:    { en: "Describe what you'd like to discuss. This helps the exhibitor prepare.",
+                       th: "อธิบายสิ่งที่คุณต้องการพูดคุย เพื่อให้ผู้แสดงสินค้าเตรียมตัวล่วงหน้า" },
+  form_required:     { en: "Required",                           th: "จำเป็น" },
+  form_pdpa:         { en: "I consent to my personal data being collected and shared with the exhibitor for this business matching session, per the Privacy Policy. Data retained for 12 months post-event. (PDPA — Thailand)",
+                       th: "ข้าพเจ้ายินยอมให้เก็บรวบรวมและแบ่งปันข้อมูลส่วนบุคคลตามนโยบายความเป็นส่วนตัว เก็บข้อมูล 12 เดือนหลังงาน (PDPA — ประเทศไทย)" },
+  form_submit:       { en: "CONFIRM BOOKING & SEND INQUIRY TO EXHIBITOR",
+                       th: "ยืนยันการจอง และส่งข้อมูลให้ผู้แสดงสินค้า" },
+  form_submitting:   { en: "Confirming…",                        th: "กำลังยืนยัน…" },
+  form_pdpa_required:{ en: "Please accept the PDPA consent to continue.",
+                       th: "กรุณายอมรับข้อกำหนด PDPA ก่อนดำเนินการต่อ" },
+
+  // ── Confirmation ──────────────────────────────────────────────────────────
+  conf_heading:      { en: "SESSION CONFIRMED!",                 th: "ยืนยันการนัดหมายแล้ว!" },
+  conf_sub:          { en: "Your confirmation email with QR code, calendar invite, and session details has been sent.",
+                       th: "อีเมลยืนยันพร้อม QR Code, นัดหมายปฏิทิน และรายละเอียดการประชุมถูกส่งให้คุณแล้ว" },
+  conf_exhibitor:    { en: "Exhibitor",                          th: "ผู้แสดงสินค้า" },
+  conf_datetime:     { en: "Date & Time",                        th: "วันและเวลา" },
+  conf_location:     { en: "Location",                           th: "สถานที่" },
+  conf_visitor:      { en: "Visitor",                            th: "ผู้เข้าร่วม" },
+  conf_location_val: { en: "Business Matching Area, Hall EH · BITEC Bangna",
+                       th: "พื้นที่จับคู่ธุรกิจ ฮอลล์ EH · ไบเทคบางนา" },
+  qr_heading:        { en: "Your Check-in QR Code",             th: "QR Code เช็คอินของคุณ" },
+  qr_sub:            { en: "Show this at the Business Matching Area desk on arrival. Staff will scan and direct you to your table.",
+                       th: "แสดงที่เคาน์เตอร์พื้นที่จับคู่ธุรกิจเมื่อมาถึง เจ้าหน้าที่จะสแกนเพื่อยืนยัน" },
+  qr_ref_label:      { en: "Booking Ref:",                      th: "รหัสการจอง:" },
+  cal_heading:       { en: "Add to Calendar",                   th: "เพิ่มในปฏิทิน" },
+  cal_google:        { en: "Add to Google Calendar",            th: "เพิ่มใน Google Calendar" },
+  cal_outlook:       { en: "Download for Outlook (.ics)",       th: "ดาวน์โหลด Outlook (.ics)" },
+  reminder_note:     { en: "A reminder email with your QR code will be resent automatically 24 hours before your session.",
+                       th: "อีเมลแจ้งเตือนพร้อม QR Code จะถูกส่งให้อัตโนมัติ 24 ชั่วโมงก่อนการประชุม" },
+  conf_reschedule:   { en: "Need to reschedule? Use the link in your confirmation email to contact the organiser.",
+                       th: "ต้องการเลื่อนนัด? ใช้ลิงก์ในอีเมลยืนยันเพื่อติดต่อผู้จัดงาน" },
+  conf_book_another: { en: "← Book Another Session",            th: "← จองการนัดหมายอื่น" },
+
+  // ── Admin ─────────────────────────────────────────────────────────────────
+  admin_heading:     { en: "ORGANISER DASHBOARD",               th: "แดชบอร์ดผู้จัด" },
+  admin_sub:         { en: "Ageing Innovation Expo 2026 · Business Matching · KRS XPANSION",
+                       th: "Ageing Innovation Expo 2026 · จับคู่ธุรกิจ · KRS XPANSION" },
+  admin_live:        { en: "Live · 6 May 2026 · Day 1",         th: "สด · 6 พ.ค. 2569 · วันที่ 1" },
+  admin_tab_bookings:{ en: "All Bookings",                      th: "การจองทั้งหมด" },
+  admin_tab_reschedule:{ en: "Reschedule Requests",             th: "คำขอเลื่อนนัด" },
+  admin_tab_exhibitors:{ en: "Exhibitors",                      th: "ผู้แสดงสินค้า" },
+  admin_tab_analytics:{ en: "Analytics",                        th: "สถิติ" },
+  admin_stat_total:  { en: "Total Bookings",                    th: "การจองทั้งหมด" },
+  admin_stat_confirmed:{ en: "Confirmed Sessions",              th: "เซสชันยืนยัน" },
+  admin_stat_exhibitors:{ en: "Active Exhibitors",              th: "ผู้แสดงสินค้าที่ใช้งาน" },
+  admin_stat_rate:   { en: "Confirmation Rate",                 th: "อัตราการยืนยัน" },
+  admin_export:      { en: "⬇ Export CSV",                      th: "⬇ ส่งออก CSV" },
+  admin_manual:      { en: "+ Manual Booking",                  th: "+ จองด้วยมือ" },
+  admin_booking_log: { en: "Booking Log",                       th: "บันทึกการจอง" },
+  tbl_ref:           { en: "Ref ID",                            th: "รหัสอ้างอิง" },
+  tbl_visitor:       { en: "Visitor",                           th: "ผู้เข้าชม" },
+  tbl_org:           { en: "Organisation",                      th: "องค์กร" },
+  tbl_exhibitor:     { en: "Exhibitor",                         th: "ผู้แสดงสินค้า" },
+  tbl_date:          { en: "Date",                              th: "วันที่" },
+  tbl_time:          { en: "Time",                              th: "เวลา" },
+  tbl_table:         { en: "Table",                             th: "โต๊ะ" },
+  tbl_status:        { en: "Status",                            th: "สถานะ" },
+  tbl_actions:       { en: "Actions",                           th: "การดำเนินการ" },
+  act_view:          { en: "View",                              th: "ดู" },
+  act_reschedule:    { en: "Reschedule",                        th: "เลื่อนนัด" },
+  act_confirm:       { en: "Confirm ✓",                         th: "ยืนยัน ✓" },
+  act_process:       { en: "Process →",                         th: "ดำเนินการ →" },
+  rsch_heading:      { en: "Reschedule Session",                th: "เลื่อนเซสชัน" },
+  rsch_new_date:     { en: "New Date",                          th: "วันที่ใหม่" },
+  rsch_new_time:     { en: "New Time Slot",                     th: "ช่วงเวลาใหม่" },
+  rsch_table:        { en: "Table Assignment",                  th: "กำหนดโต๊ะ" },
+  rsch_confirm_btn:  { en: "✉ Confirm & Notify Both",           th: "✉ ยืนยันและแจ้งเตือนทั้งสองฝ่าย" },
+  rsch_note:         { en: "Both visitor and exhibitor will receive updated confirmation emails with a new QR code automatically.",
+                       th: "ผู้เข้าชมและผู้แสดงสินค้าจะได้รับอีเมลยืนยันพร้อม QR Code ใหม่โดยอัตโนมัติ" },
+
+  // ── Admin PIN gate ────────────────────────────────────────────────────────
+  pin_heading:       { en: "Organiser Access",                  th: "เข้าถึงสำหรับผู้จัด" },
+  pin_sub:           { en: "Enter your admin PIN to access the dashboard.",
+                       th: "ป้อน PIN แอดมินเพื่อเข้าถึงแดชบอร์ด" },
+  pin_label:         { en: "Admin PIN",                         th: "PIN แอดมิน" },
+  pin_btn:           { en: "Access Dashboard",                  th: "เข้าถึงแดชบอร์ด" },
+  pin_wrong:         { en: "Incorrect PIN. Please try again.",  th: "PIN ไม่ถูกต้อง กรุณาลองอีกครั้ง" },
+
+  // ── Status labels ─────────────────────────────────────────────────────────
+  status_confirmed:  { en: "Confirmed",                         th: "ยืนยันแล้ว" },
+  status_cancelled:  { en: "Cancelled",                         th: "ยกเลิกแล้ว" },
+  status_rescheduled:{ en: "Rescheduled",                       th: "เลื่อนนัดแล้ว" },
+  status_pending:    { en: "Pending",                           th: "รอดำเนินการ" },
+  status_completed:  { en: "Completed",                         th: "เสร็จสิ้น" },
+  status_no_show:    { en: "No Show",                           th: "ไม่มาตามนัด" },
+
+  // ── Footer ────────────────────────────────────────────────────────────────
+  footer_event:      { en: "6–8 May 2026 · Hall EH 103-104, BITEC Bangna, Bangkok",
+                       th: "6–8 พ.ค. 2569 · ฮอลล์ EH 103-104 ไบเทคบางนา กรุงเทพฯ" },
+  footer_organiser:  { en: "Organised by KRS XPANSION CO.,LTD",th: "จัดโดย KRS XPANSION CO.,LTD" },
+  footer_mockup:     { en: "MOCKUP — match.ageinginnovationexpo.com",
+                       th: "MOCKUP — match.ageinginnovationexpo.com" },
+} as const;
+
+export type TKey = keyof typeof t;
+
+// ── Helper: get translated string ────────────────────────────────────────────
+export function tr(key: TKey, lang: "en" | "th"): string {
+  return t[key][lang] ?? t[key]["en"];
+}

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ageing Innovation Expo Thailand 2026 — Business Matching Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=Prompt:ital,wght@0,400;0,600;0,700;0,800;0,900;1,700&family=Barlow+Condensed:wght@600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ════════════════════════════════════════════
+   BRAND TOKENS — Ageing Thailand 2026
+   ════════════════════════════════════════════ */
+:root {
+  /* Primary palette from artwork */
+  --or-primary:   #F07800;   /* main orange */
+  --or-deep:      #D95F00;   /* deep orange / dark */
+  --or-light:     #FF9500;   /* bright orange highlight */
+  --or-pale:      #FFF0DC;   /* light tint for backgrounds */
+  --or-pale2:     #FDE8C4;   /* slightly deeper pale */
+
+  /* Logo tri-colours */
+  --logo-green:   #1B6B2E;   /* AGEING / THAILAND / 2026 green */
+  --logo-yellow:  #F5C400;   /* "AGEING" accent yellow */
+  --logo-red:     #D32F2F;   /* "AGEING" accent red */
+
+  /* Neutrals */
+  --dark:         #1A1A1A;
+  --dark2:        #2C2C2E;
+  --mid:          #555;
+  --light:        #888;
+  --border:       #E8E0D5;
+  --bg:           #FBF7F2;
+  --white:        #FFFFFF;
+
+  /* Status */
+  --green:        #1B6B2E;
+  --green-bg:     #E6F4EA;
+  --blue:         #1565C0;
+  --blue-bg:      #E3F2FD;
+  --amber:        #E65100;
+  --amber-bg:     #FFF3E0;
+  --red:          #C62828;
+  --red-bg:       #FFEBEE;
+
+  /* Shadows */
+  --sh:  0 2px 16px rgba(240,120,0,.12);
+  --shl: 0 8px 40px rgba(240,120,0,.18);
+  --shd: 0 2px 12px rgba(0,0,0,.08);
+
+  /* Hex pattern */
+  --hex-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='52' viewBox='0 0 60 52'%3E%3Cpath d='M30 2 L56 16 L56 44 L30 58 L4 44 L4 16 Z' fill='none' stroke='rgba(255,255,255,0.12)' stroke-width='1.5'/%3E%3Cpath d='M30 18 L46 26 L46 44 L30 52 L14 44 L14 26 Z' fill='none' stroke='rgba(255,255,255,0.07)' stroke-width='1'/%3E%3C/svg%3E");
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--dark); min-height:100vh; }
+
+/* ════ TYPOGRAPHY ════ */
+.font-headline { font-family:'Barlow Condensed',sans-serif; }
+.font-prompt   { font-family:'Prompt',sans-serif; }
+
+/* ════ NAV BAR ════ */
+.nav {
+  background: var(--white);
+  border-bottom: 4px solid var(--or-primary);
+  padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 60px;
+  position: sticky; top: 0; z-index: 300;
+  box-shadow: 0 2px 16px rgba(0,0,0,.1);
+  gap: 12px;
+}
+.nav-brand { display:flex; align-items:center; gap:10px; flex-shrink:0; }
+
+/* Logo — recreates the tri-colour AGEING THAILAND 2026 style */
+.nav-logo-text {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900;
+  line-height:1;
+  font-size:13px;
+}
+.nav-logo-text .a-line { font-size:17px; letter-spacing:-.3px; }
+.nav-logo-text .a-line .a-green { color:var(--logo-green); }
+.nav-logo-text .a-line .a-yellow { color:var(--logo-yellow); }
+.nav-logo-text .a-line .a-red   { color:var(--logo-red); }
+.nav-logo-text .t-line { color:var(--logo-green); font-size:14px; letter-spacing:.5px; display:block; }
+.nav-logo-text .y-line { color:var(--logo-green); font-size:14px; display:block; }
+.nav-divider { width:1px; height:36px; background:var(--border); margin:0 4px; flex-shrink:0; }
+.nav-subtitle { font-size:10px; color:var(--mid); line-height:1.3; max-width:120px; }
+.nav-subtitle strong { color:var(--or-primary); font-size:11px; display:block; }
+
+.nav-tabs { display:flex; gap:2px; overflow-x:auto; scrollbar-width:none; }
+.nav-tabs::-webkit-scrollbar { display:none; }
+.nav-tab {
+  padding:6px 12px; font-size:11.5px; border:none; background:none;
+  cursor:pointer; border-radius:7px; color:var(--mid);
+  font-family:'Sarabun',sans-serif; font-weight:600; white-space:nowrap;
+  transition:all .18s;
+}
+.nav-tab:hover { background:var(--or-pale); color:var(--or-primary); }
+.nav-tab.active { background:var(--or-primary); color:white; }
+
+.lang-toggle { display:flex; gap:2px; background:var(--bg); padding:3px; border-radius:8px; flex-shrink:0; }
+.lang-btn {
+  padding:4px 9px; font-size:11.5px; border:none; cursor:pointer;
+  border-radius:6px; font-family:'Sarabun',sans-serif; background:none;
+  color:var(--light); transition:all .18s; font-weight:700;
+}
+.lang-btn.active { background:var(--or-primary); color:white; box-shadow:var(--sh); }
+
+/* ════ SCREEN SYSTEM ════ */
+.screen { display:none; }
+.screen.active { display:block; }
+.screen-lbl {
+  background:rgba(26,26,26,.8); color:white; font-size:9.5px;
+  padding:3px 9px; border-radius:4px;
+  position:fixed; bottom:12px; right:12px;
+  pointer-events:none; z-index:999; font-family:monospace;
+}
+
+/* ════ HERO ════ */
+.hero {
+  background: linear-gradient(160deg, var(--or-deep) 0%, var(--or-primary) 40%, var(--or-light) 100%);
+  background-image: var(--hex-bg), linear-gradient(160deg, var(--or-deep) 0%, var(--or-primary) 40%, var(--or-light) 100%);
+  padding: 36px 24px 30px;
+  text-align: center;
+  position: relative; overflow:hidden;
+}
+.hero::after {
+  content:''; position:absolute; bottom:-60px; right:-60px;
+  width:220px; height:220px; border-radius:50%;
+  background:rgba(255,255,255,.06); pointer-events:none;
+}
+.hero-eyebrow {
+  display:inline-flex; align-items:center; gap:8px;
+  background:rgba(255,255,255,.15); backdrop-filter:blur(4px);
+  color:white; font-size:10.5px; font-weight:700;
+  letter-spacing:1.2px; text-transform:uppercase;
+  padding:5px 16px; border-radius:30px; margin-bottom:14px;
+  border:1px solid rgba(255,255,255,.2);
+}
+.hero h1 {
+  font-family:'Barlow Condensed',sans-serif;
+  font-weight:900; font-size:32px;
+  color:white; line-height:1.1;
+  text-transform:uppercase; letter-spacing:-.5px;
+  margin-bottom:4px;
+}
+.hero h1 .accent { color:var(--logo-yellow); }
+.hero-sub {
+  font-size:12.5px; color:rgba(255,255,255,.85);
+  margin-bottom:20px; font-weight:500;
+}
+.hero-chips { display:flex; gap:8px; justify-content:center; flex-wrap:wrap; }
+.hero-chip {
+  background:rgba(255,255,255,.18);
+  border:1px solid rgba(255,255,255,.25);
+  color:white; padding:6px 14px; border-radius:30px;
+  font-size:12px; font-weight:600;
+  display:flex; align-items:center; gap:5px;
+  backdrop-filter:blur(4px);
+}
+
+/* ════ SEARCH SECTION ════ */
+.search-wrap {
+  background:white;
+  border-bottom:1px solid var(--border);
+  padding:14px 20px;
+  position:sticky; top:60px; z-index:200;
+  box-shadow:0 2px 8px rgba(0,0,0,.04);
+}
+.search-inner { max-width:820px; margin:0 auto; }
+.search-row { display:flex; gap:8px; }
+.search-input {
+  flex:1; padding:10px 14px 10px 38px;
+  border:1.5px solid var(--border); border-radius:10px;
+  font-size:13.5px; font-family:'Sarabun',sans-serif;
+  outline:none; transition:border .18s;
+  background: white url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='15' height='15' viewBox='0 0 24 24' fill='none' stroke='%23aaa' stroke-width='2.2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 12px center;
+}
+.search-input:focus { border-color:var(--or-primary); }
+.search-btn {
+  padding:10px 20px; background:var(--or-primary); color:white;
+  border:none; border-radius:10px; font-size:13px; cursor:pointer;
+  font-family:'Sarabun',sans-serif; font-weight:700;
+  transition:background .18s; white-space:nowrap;
+}
+.search-btn:hover { background:var(--or-deep); }
+.chips-row { display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.chip {
+  padding:4px 12px; border-radius:20px; font-size:11.5px;
+  border:1.5px solid var(--border); background:white;
+  cursor:pointer; transition:all .18s;
+  font-family:'Sarabun',sans-serif; color:var(--mid); font-weight:500;
+}
+.chip:hover,.chip.active { background:var(--or-pale); border-color:var(--or-primary); color:var(--or-primary); font-weight:700; }
+
+/* ════ EXHIBITOR GRID ════ */
+.main-wrap { padding:18px 20px; max-width:1120px; margin:0 auto; }
+.sec-head { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
+.sec-head h2 { font-family:'Prompt',sans-serif; font-size:16px; font-weight:700; }
+.cnt-pill { background:var(--or-pale); color:var(--or-primary); font-size:11.5px; font-weight:700; padding:3px 12px; border-radius:30px; border:1px solid var(--or-pale2); }
+
+.ex-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:14px; }
+.ex-card {
+  background:white; border-radius:16px; padding:18px;
+  cursor:pointer; border:1.5px solid var(--border);
+  transition:all .22s; box-shadow:var(--shd);
+  position:relative; overflow:hidden;
+}
+.ex-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:var(--card-accent, var(--or-primary));
+  transform:scaleX(0); transform-origin:left;
+  transition:transform .22s;
+}
+.ex-card:hover { border-color:var(--or-primary); transform:translateY(-3px); box-shadow:var(--shl); }
+.ex-card:hover::before { transform:scaleX(1); }
+.card-logo {
+  width:50px; height:50px; border-radius:12px;
+  margin-bottom:11px; display:flex; align-items:center; justify-content:center;
+  font-size:18px; font-weight:900; color:white;
+  font-family:'Barlow Condensed',sans-serif; letter-spacing:.5px;
+}
+.card-name { font-family:'Prompt',sans-serif; font-weight:700; font-size:13.5px; margin-bottom:2px; color:var(--dark); }
+.card-cat { font-size:11px; color:var(--or-primary); font-weight:600; margin-bottom:7px; text-transform:uppercase; letter-spacing:.4px; }
+.card-desc { font-size:12px; color:var(--mid); line-height:1.55; margin-bottom:10px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.card-ft { display:flex; align-items:center; justify-content:space-between; margin-bottom:10px; }
+.slots-ok { display:flex; align-items:center; gap:4px; font-size:11px; color:var(--green); font-weight:700; }
+.dot-g { width:6px; height:6px; border-radius:50%; background:var(--green); animation:pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1}50%{opacity:.4} }
+.card-booth { font-size:10.5px; color:var(--light); background:var(--bg); padding:2px 8px; border-radius:6px; }
+.bk-btn {
+  width:100%; padding:8px; background:var(--or-primary); color:white;
+  border:none; border-radius:9px; font-size:12.5px; cursor:pointer;
+  font-family:'Sarabun',sans-serif; font-weight:700;
+  transition:all .18s; letter-spacing:.2px;
+}
+.bk-btn:hover { background:var(--or-deep); }
+
+/* ════ BACK BAR ════ */
+.back-bar {
+  display:flex; align-items:center; gap:8px;
+  padding:13px 20px; background:white;
+  border-bottom:1px solid var(--border);
+  cursor:pointer; color:var(--or-primary); font-weight:700; font-size:13px;
+  transition:background .15s;
+}
+.back-bar:hover { background:var(--or-pale); }
+
+/* ════ PROFILE ════ */
+.profile-hero {
+  background:linear-gradient(135deg,var(--or-deep),var(--or-primary));
+  background-image:var(--hex-bg),linear-gradient(135deg,var(--or-deep),var(--or-primary));
+  padding:24px 20px; color:white;
+}
+.profile-hero-inner { max-width:900px; margin:0 auto; display:flex; gap:18px; align-items:flex-start; }
+.p-logo { width:72px; height:72px; border-radius:16px; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:900; color:white; flex-shrink:0; border:3px solid rgba(255,255,255,.3); font-family:'Barlow Condensed',sans-serif; }
+.p-info h1 { font-family:'Barlow Condensed',sans-serif; font-size:24px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; margin-bottom:3px; }
+.p-info .pcat { font-size:11px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--logo-yellow); margin-bottom:6px; }
+.p-info p { font-size:13px; color:rgba(255,255,255,.88); line-height:1.6; }
+.p-tags { display:flex; gap:5px; flex-wrap:wrap; margin-top:10px; }
+.p-tag { background:rgba(255,255,255,.18); color:white; padding:3px 10px; border-radius:6px; font-size:11px; font-weight:600; border:1px solid rgba(255,255,255,.2); }
+
+.profile-meta-bar {
+  background:white; border-bottom:1px solid var(--border);
+  padding:12px 20px;
+}
+.p-meta-inner { max-width:900px; margin:0 auto; display:flex; gap:20px; flex-wrap:wrap; align-items:center; }
+.p-meta-item { font-size:12.5px; color:var(--mid); display:flex; align-items:center; gap:5px; }
+.p-meta-item strong { color:var(--dark); }
+.slots-live { color:var(--green); font-weight:700; font-size:12.5px; display:flex; align-items:center; gap:5px; }
+.tbc-pill { background:var(--amber-bg); color:var(--amber); font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:6px; border:1px solid #FFCCBC; }
+
+/* ════ SLOT PICKER ════ */
+.slot-section { padding:18px 20px; max-width:900px; margin:0 auto; }
+.info-banner {
+  background:linear-gradient(135deg,var(--or-pale),var(--or-pale2));
+  border:1.5px solid #FCCF9A; border-radius:12px;
+  padding:12px 16px; margin-bottom:16px;
+  display:flex; gap:10px; align-items:flex-start;
+}
+.info-banner .ib-icon { font-size:20px; flex-shrink:0; margin-top:-1px; }
+.info-banner p { font-size:12.5px; color:var(--or-deep); line-height:1.55; }
+.day-tabs { display:flex; gap:7px; margin-bottom:16px; flex-wrap:wrap; }
+.day-tab {
+  padding:10px 18px; border-radius:12px;
+  border:2px solid var(--border); background:white;
+  cursor:pointer; font-family:'Sarabun',sans-serif; font-size:12px;
+  color:var(--mid); transition:all .18s; text-align:center; min-width:82px;
+}
+.day-tab:hover { border-color:var(--or-primary); color:var(--or-primary); }
+.day-tab.active { background:var(--or-primary); border-color:var(--or-primary); color:white; font-weight:700; }
+.day-tab .dn { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; display:block; line-height:1; }
+.slots-legend { display:flex; gap:14px; margin-bottom:12px; }
+.leg-item { display:flex; align-items:center; gap:5px; font-size:11px; color:var(--mid); }
+.leg-dot { width:10px; height:10px; border-radius:3px; }
+.slots-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(95px,1fr)); gap:8px; }
+.slot {
+  padding:11px 8px; border-radius:10px;
+  border:1.5px solid var(--border); text-align:center;
+  cursor:pointer; transition:all .18s;
+  background:white; font-size:13px; font-weight:700; color:var(--dark);
+}
+.slot:hover { border-color:var(--or-primary); background:var(--or-pale); color:var(--or-primary); }
+.slot.selected {
+  background:var(--or-primary); border-color:var(--or-primary); color:white;
+  box-shadow:0 4px 14px rgba(240,120,0,.35);
+}
+.slot.booked { background:#F5F5F5; border-color:#E8E8E8; color:#CCC; cursor:not-allowed; }
+.slot-sub { font-size:9.5px; font-weight:500; margin-top:1px; opacity:.7; }
+.slot.booked .slot-sub { opacity:1; color:#DDD; }
+.slot.selected .slot-sub { opacity:.8; }
+.proceed-btn {
+  margin-top:18px; padding:13px 36px;
+  background:linear-gradient(135deg,var(--or-primary),var(--or-light));
+  color:white; border:none; border-radius:12px;
+  font-size:14px; font-weight:700; cursor:pointer;
+  font-family:'Prompt',sans-serif;
+  box-shadow:0 4px 20px rgba(240,120,0,.35);
+  transition:all .18s; display:block; width:100%; max-width:360px; margin-left:auto; margin-right:auto;
+}
+.proceed-btn:hover { box-shadow:0 6px 28px rgba(240,120,0,.5); transform:translateY(-1px); }
+
+/* ════ BOOKING FORM ════ */
+.form-outer { max-width:700px; margin:0 auto; padding:20px 18px; }
+.no-login-banner {
+  background:var(--green-bg); border:1.5px solid #A5D6A7;
+  border-radius:10px; padding:10px 16px; margin-bottom:14px;
+  display:flex; align-items:center; gap:10px;
+}
+.no-login-banner .nlb-icon { font-size:22px; }
+.no-login-banner p { font-size:12.5px; color:var(--green); font-weight:700; }
+.session-pill {
+  background:white; border:1.5px solid var(--border);
+  border-radius:12px; padding:13px 16px; margin-bottom:16px;
+  border-left:4px solid var(--or-primary);
+  box-shadow:var(--shd);
+}
+.session-pill .sp-label { font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.8px; color:var(--or-primary); margin-bottom:5px; }
+.session-pill .sp-val { font-size:13px; color:var(--dark); line-height:1.6; font-weight:500; }
+.session-pill .sp-val strong { font-weight:800; }
+.form-card {
+  background:white; border-radius:16px; padding:22px;
+  border:1.5px solid var(--border); box-shadow:var(--shd);
+}
+.form-card h3 { font-family:'Prompt',sans-serif; font-size:15px; font-weight:700; margin-bottom:3px; }
+.form-card .f-sub { font-size:12px; color:var(--light); margin-bottom:18px; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:12px; }
+.fg { display:flex; flex-direction:column; gap:4px; }
+.fg.full { grid-column:1/-1; }
+.fg label { font-size:11.5px; font-weight:700; color:var(--mid); display:flex; align-items:center; gap:4px; }
+.fg label .req { color:var(--or-primary); }
+.fg label .lth { color:var(--light); font-weight:400; font-size:10px; }
+.fg input,.fg select,.fg textarea {
+  padding:9px 12px; border:1.5px solid var(--border);
+  border-radius:9px; font-size:13px;
+  font-family:'Sarabun',sans-serif; outline:none; transition:border .18s;
+  background:white; color:var(--dark);
+}
+.fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--or-primary); box-shadow:0 0 0 3px rgba(240,120,0,.1); }
+.fg textarea { resize:vertical; min-height:76px; }
+.fg select { appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 10px center; padding-right:30px; }
+.pdpa-box {
+  display:flex; gap:10px; align-items:flex-start;
+  background:var(--or-pale); padding:13px; border-radius:10px;
+  margin:14px 0; border:1.5px solid var(--or-pale2);
+}
+.pdpa-box input[type=checkbox] { margin-top:2px; accent-color:var(--or-primary); width:15px; height:15px; flex-shrink:0; }
+.pdpa-box label { font-size:12px; color:var(--mid); line-height:1.55; }
+.pdpa-box a { color:var(--or-primary); font-weight:600; }
+.submit-btn {
+  width:100%; padding:14px;
+  background:linear-gradient(135deg,var(--or-primary),var(--or-light));
+  color:white; border:none; border-radius:11px;
+  font-size:15px; font-weight:800; cursor:pointer;
+  font-family:'Barlow Condensed',sans-serif;
+  letter-spacing:.5px; text-transform:uppercase;
+  box-shadow:0 4px 20px rgba(240,120,0,.4);
+  transition:all .18s;
+}
+.submit-btn:hover { box-shadow:0 6px 28px rgba(240,120,0,.55); transform:translateY(-1px); }
+
+/* ════ CONFIRMATION ════ */
+.conf-outer { max-width:580px; margin:28px auto; padding:0 18px 32px; }
+.conf-card {
+  background:white; border-radius:22px; padding:30px;
+  text-align:center; box-shadow:var(--shl);
+  border:1.5px solid var(--border);
+  position:relative; overflow:hidden;
+}
+.conf-card::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:5px;
+  background:linear-gradient(90deg,var(--or-deep),var(--or-primary),var(--or-light));
+}
+.conf-icon {
+  width:70px; height:70px;
+  background:linear-gradient(135deg,#27AE60,#2ECC71);
+  border-radius:50%; display:flex; align-items:center; justify-content:center;
+  margin:0 auto 14px; font-size:30px;
+  box-shadow:0 4px 20px rgba(39,174,96,.3);
+}
+.conf-card h2 { font-family:'Barlow Condensed',sans-serif; font-size:26px; font-weight:900; text-transform:uppercase; letter-spacing:.5px; margin-bottom:2px; }
+.conf-card .conf-th { font-size:14px; color:var(--light); margin-bottom:4px; }
+.conf-card .conf-sub { font-size:12.5px; color:var(--mid); margin-bottom:20px; line-height:1.5; }
+
+/* Session summary */
+.sess-card { background:var(--bg); border-radius:13px; padding:15px; text-align:left; margin-bottom:18px; border:1px solid var(--border); }
+.sum-row { display:flex; gap:10px; align-items:flex-start; padding:7px 0; border-bottom:1px solid var(--border); }
+.sum-row:last-child { border-bottom:none; }
+.sum-ic { width:30px; height:30px; background:var(--or-pale); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0; font-size:14px; }
+.sum-lbl { font-size:10px; color:var(--light); text-transform:uppercase; letter-spacing:.5px; margin-bottom:1px; }
+.sum-val { font-size:13px; font-weight:700; color:var(--dark); }
+
+/* QR Section */
+.qr-card {
+  background:white; border:2px solid var(--or-pale2);
+  border-radius:14px; padding:16px; margin-bottom:16px;
+  display:flex; gap:16px; align-items:center;
+  box-shadow:0 2px 12px rgba(240,120,0,.1);
+}
+.qr-frame {
+  width:84px; height:84px; flex-shrink:0;
+  border-radius:10px; overflow:hidden;
+  border:2px solid var(--border); background:white;
+  padding:4px;
+}
+.qr-frame canvas { display:block; width:76px; height:76px; }
+.qr-details h4 { font-family:'Prompt',sans-serif; font-size:13.5px; font-weight:700; margin-bottom:3px; }
+.qr-details p { font-size:12px; color:var(--mid); line-height:1.5; margin-bottom:5px; }
+.qr-ref { font-size:11px; color:var(--light); }
+.qr-ref code { font-family:monospace; font-weight:700; color:var(--dark); background:var(--bg); padding:1px 5px; border-radius:4px; font-size:11px; }
+
+/* Calendar buttons — CONFIRMED */
+.cal-label { font-size:12.5px; font-weight:700; color:var(--dark); margin-bottom:8px; text-align:left; display:flex; align-items:center; gap:7px; }
+.confirmed-chip { background:var(--green-bg); color:var(--green); font-size:10px; font-weight:700; padding:2px 7px; border-radius:5px; }
+.cal-grid { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px; }
+.cal-btn {
+  padding:11px 10px; border-radius:10px; border:1.5px solid var(--border);
+  background:white; cursor:pointer; font-size:12.5px;
+  font-family:'Sarabun',sans-serif; font-weight:700; color:var(--mid);
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  transition:all .18s;
+}
+.cal-btn:hover { transform:translateY(-1px); box-shadow:var(--shd); }
+.cal-btn.gcal { border-color:#DADCE0; color:#1A73E8; }
+.cal-btn.gcal:hover { background:#EEF3FF; border-color:#1A73E8; }
+.cal-btn.outlook { border-color:#DADCE0; color:#0078D4; }
+.cal-btn.outlook:hover { background:#EEF6FF; border-color:#0078D4; }
+.reminder-note {
+  background:var(--or-pale); border:1px solid var(--or-pale2);
+  border-radius:9px; padding:10px 13px; font-size:12px;
+  color:var(--or-deep); margin-bottom:14px; text-align:left;
+}
+.divider { height:1px; background:var(--border); margin:12px 0; }
+.conf-ref-note { font-size:11px; color:var(--light); }
+.conf-ref-note strong { color:var(--dark); }
+
+/* ════ ADMIN ════ */
+.adm-header {
+  background:linear-gradient(135deg,var(--dark2),var(--dark));
+  padding:18px 20px; color:white;
+}
+.adm-header-inner { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; }
+.adm-header h1 { font-family:'Barlow Condensed',sans-serif; font-size:22px; font-weight:800; text-transform:uppercase; letter-spacing:.5px; }
+.adm-header p { font-size:12px; color:rgba(255,255,255,.5); margin-top:1px; }
+.adm-live { display:flex; align-items:center; gap:6px; font-size:12px; color:rgba(255,255,255,.7); }
+.adm-live-dot { width:7px; height:7px; border-radius:50%; background:#2ECC71; animation:pulse 1.5s infinite; }
+.adm-tabs {
+  background:#23232A; padding:0 20px;
+  display:flex; gap:0; border-bottom:1px solid rgba(255,255,255,.08); overflow-x:auto;
+}
+.adm-tab {
+  padding:11px 16px; font-size:12px; color:rgba(255,255,255,.5);
+  cursor:pointer; font-family:'Sarabun',sans-serif;
+  border-bottom:2px solid transparent; transition:all .18s; white-space:nowrap;
+}
+.adm-tab:hover { color:white; }
+.adm-tab.active { color:var(--or-light); border-bottom-color:var(--or-light); font-weight:700; }
+.adm-stats { display:grid; grid-template-columns:repeat(4,1fr); gap:12px; padding:16px 20px; }
+.stat-card { background:white; border-radius:12px; padding:15px; border:1.5px solid var(--border); position:relative; overflow:hidden; }
+.stat-card::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--stat-color,var(--border)); }
+.stat-num { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:800; color:var(--dark); }
+.stat-lbl { font-size:11px; color:var(--light); margin-top:1px; }
+.adm-body { padding:0 20px 24px; }
+.tbl-toolbar { display:flex; align-items:center; justify-content:space-between; margin-bottom:13px; flex-wrap:wrap; gap:8px; }
+.tbl-toolbar h3 { font-family:'Prompt',sans-serif; font-size:14.5px; font-weight:700; }
+.tbl-btns { display:flex; gap:6px; }
+.t-btn { padding:7px 14px; border-radius:8px; font-size:12px; cursor:pointer; font-family:'Sarabun',sans-serif; font-weight:700; transition:all .18s; }
+.t-btn-outline { background:white; border:1.5px solid var(--border); color:var(--mid); }
+.t-btn-outline:hover { border-color:var(--or-primary); color:var(--or-primary); }
+.t-btn-fill { background:var(--or-primary); border:1.5px solid var(--or-primary); color:white; }
+.t-btn-fill:hover { background:var(--or-deep); }
+.tbl-wrap { overflow-x:auto; border-radius:12px; box-shadow:var(--shd); }
+table { width:100%; border-collapse:collapse; background:white; font-size:12.5px; }
+th { background:var(--dark2); color:white; padding:11px 13px; text-align:left; font-size:11.5px; font-weight:700; white-space:nowrap; }
+td { padding:11px 13px; border-bottom:1px solid var(--border); color:var(--dark); vertical-align:middle; }
+tr:last-child td { border-bottom:none; }
+tr:hover td { background:var(--bg); }
+.sb { padding:3px 9px; border-radius:20px; font-size:10.5px; font-weight:700; white-space:nowrap; }
+.sc { background:var(--green-bg); color:var(--green); }
+.sp { background:var(--amber-bg); color:var(--amber); }
+.sx { background:var(--red-bg); color:var(--red); }
+.sr { background:var(--blue-bg); color:var(--blue); }
+.act-btn { color:var(--or-primary); font-size:11.5px; font-weight:700; cursor:pointer; background:none; border:none; font-family:'Sarabun',sans-serif; padding:0; margin-right:8px; transition:color .15s; }
+.act-btn:hover { color:var(--or-deep); text-decoration:underline; }
+
+/* Reschedule panel */
+.rsch-panel {
+  background:white; border:1.5px solid var(--border);
+  border-left:4px solid var(--blue);
+  border-radius:12px; padding:16px; margin-top:14px;
+  box-shadow:var(--shd);
+}
+.rsch-panel h4 { font-family:'Prompt',sans-serif; font-size:13.5px; font-weight:700; margin-bottom:12px; color:var(--dark); }
+.rsch-row { display:grid; grid-template-columns:1fr 1fr 1fr auto; gap:10px; align-items:end; }
+.rfg { display:flex; flex-direction:column; gap:4px; }
+.rfg label { font-size:11px; font-weight:700; color:var(--mid); }
+.rfg select,.rfg input { padding:8px 10px; border:1.5px solid var(--border); border-radius:8px; font-size:12.5px; font-family:'Sarabun',sans-serif; outline:none; }
+.rfg select:focus,.rfg input:focus { border-color:var(--blue); }
+.rsch-confirm { padding:9px 16px; background:var(--blue); color:white; border:none; border-radius:8px; font-size:12.5px; cursor:pointer; font-family:'Sarabun',sans-serif; font-weight:700; white-space:nowrap; transition:background .15s; }
+.rsch-confirm:hover { background:#0D47A1; }
+.rsch-note { font-size:11px; color:var(--light); margin-top:9px; display:flex; align-items:center; gap:5px; }
+
+/* ════ FLOW SCREEN ════ */
+.flow-outer { max-width:920px; margin:24px auto; padding:0 18px 32px; }
+.flow-title { font-family:'Barlow Condensed',sans-serif; font-size:28px; font-weight:900; text-transform:uppercase; letter-spacing:.3px; margin-bottom:4px; }
+.flow-sub { font-size:13px; color:var(--mid); margin-bottom:22px; }
+.flow-card { background:white; border:1.5px solid var(--border); border-radius:16px; padding:20px; margin-bottom:16px; box-shadow:var(--shd); }
+.flow-card-hdr { display:flex; align-items:center; gap:10px; margin-bottom:16px; }
+.flow-card-icon { width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.flow-card-hdr h3 { font-family:'Prompt',sans-serif; font-size:14.5px; font-weight:700; }
+.flow-steps { display:flex; align-items:flex-start; flex-wrap:nowrap; overflow-x:auto; gap:0; padding-bottom:4px; }
+.flow-step { flex-shrink:0; width:100px; text-align:center; }
+.fs-circle { width:34px; height:34px; border-radius:50%; background:var(--or-primary); color:white; font-weight:800; font-size:14px; display:flex; align-items:center; justify-content:center; margin:0 auto 7px; font-family:'Barlow Condensed',sans-serif; }
+.flow-card.visitor-flow .fs-circle { background:var(--or-primary); }
+.flow-card.exhibitor-flow .fs-circle { background:var(--logo-green); }
+.flow-card.organiser-flow .fs-circle { background:var(--dark2); }
+.fs-label { font-size:10.5px; font-weight:700; color:var(--dark); line-height:1.3; margin-bottom:2px; }
+.fs-sub { font-size:9.5px; color:var(--light); line-height:1.35; }
+.flow-arrow { flex-shrink:0; color:var(--border); font-size:20px; padding:0 2px; margin-top:7px; }
+.decisions-table { background:white; border:1.5px solid var(--border); border-radius:16px; padding:20px; box-shadow:var(--shd); }
+.decisions-table h3 { font-family:'Prompt',sans-serif; font-size:14.5px; font-weight:700; margin-bottom:14px; }
+
+/* ════ RESPONSIVE ════ */
+@media(max-width:640px){
+  .ex-grid { grid-template-columns:1fr 1fr; }
+  .form-grid { grid-template-columns:1fr; }
+  .adm-stats { grid-template-columns:1fr 1fr; }
+  .cal-grid { grid-template-columns:1fr; }
+  .nav-tabs { display:none; }
+  .rsch-row { grid-template-columns:1fr 1fr; }
+  .profile-hero-inner { flex-direction:column; }
+  .flow-steps { gap:0; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ NAV ════════ -->
+<nav class="nav">
+  <div class="nav-brand">
+    <!-- Tri-colour logo recreation -->
+    <!-- New brand logo: Ageing Innovation Expo Thailand 2026 -->
+    <div style="display:flex;flex-direction:column;line-height:1">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:15px;color:#1B6B2E;letter-spacing:.2px">AGEING <span style="color:#F07800">INNOVATION</span> EXPO</div>
+      <div style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:11px;color:#555;letter-spacing:.8px">THAILAND <span style="color:#F07800">2026</span></div>
+    </div>
+    <div class="nav-divider"></div>
+    <div class="nav-subtitle"><strong>Business Matching</strong><span style="color:var(--or-primary)">ageinginnovationexpo.com</span></div>
+  </div>
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="go('directory')">1 · Directory</button>
+    <button class="nav-tab" onclick="go('profile')">2 · Profile + Slots</button>
+    <button class="nav-tab" onclick="go('booking')">3 · Inquiry Form</button>
+    <button class="nav-tab" onclick="go('confirmation')">4 · Confirmation + QR</button>
+    <button class="nav-tab" onclick="go('admin')">5 · Admin Dashboard</button>
+    <button class="nav-tab" onclick="go('flow')">6 · System Flow</button>
+  </div>
+  <div class="lang-toggle">
+    <button class="lang-btn active" id="btn-en" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" id="btn-th" onclick="setLang('th')">TH</button>
+  </div>
+</nav>
+
+<!-- WEBSITE CONTEXT BAR — mirrors ageinginnovationexpo.com nav -->
+<div style="background:#1B6B2E;padding:5px 20px;display:flex;align-items:center;gap:12px;font-size:11px;color:rgba(255,255,255,.7);overflow-x:auto;white-space:nowrap">
+  <span>🌐 <a href="https://ageinginnovationexpo.com" target="_blank" style="color:rgba(255,255,255,.7);text-decoration:none">ageinginnovationexpo.com</a></span>
+  <span style="opacity:.4">›</span>
+  <span style="color:var(--logo-yellow);font-weight:700">BUSINESS MATCHING</span>
+  <span style="opacity:.4">›</span>
+  <span style="color:rgba(255,255,255,.9)">Exhibitor Directory (Buyer Portal)</span>
+  <span style="margin-left:auto;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:4px;font-weight:700;color:white">PLATFORM MOCKUP — DEV HANDOFF</span>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 1 · EXHIBITOR DIRECTORY              -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-directory" class="screen active">
+  <div class="hero">
+    <div class="hero-eyebrow">🤝 <span data-en="Business Matching Platform" data-th="แพลตฟอร์มจับคู่ธุรกิจ">Business Matching Platform</span></div>
+    <h1><span data-en="Connect with" data-th="เชื่อมต่อกับ">Connect with</span> <span class="accent" data-en="Innovators" data-th="นักนวัตกรรม">Innovators</span><br><span data-en="in the Longevity Economy" data-th="ในเศรษฐกิจผู้มีอายุยืน">in the Longevity Economy</span></h1>
+    <p class="hero-sub" data-en="Browse 300+ exhibitors · Book on-site meetings · No login required" data-th="เรียกดูผู้แสดงสินค้ากว่า 300 ราย · นัดหมายล่วงหน้า · ไม่ต้องสมัครสมาชิก">Browse 300+ exhibitors · Book on-site meetings · No login required</p>
+    <div class="hero-chips">
+      <div class="hero-chip">📅 <span data-en="6–8 May 2026" data-th="6–8 พ.ค. 2569">6–8 May 2026</span></div>
+      <div class="hero-chip">⏰ 10:00–18:00</div>
+      <div class="hero-chip">📍 <span data-en="Hall EH 103-104, BITEC Bangna" data-th="ฮอลล์ EH 103-104 ไบเทคบางนา">Hall EH 103-104, BITEC Bangna</span></div>
+      <div class="hero-chip" style="background:rgba(245,196,0,.25);border-color:rgba(245,196,0,.4);">🏆 <span data-en="Longevity Meets Innovation" data-th="ความยืนยาวพบกับนวัตกรรม">Longevity Meets Innovation</span></div>
+    </div>
+  </div>
+  <div class="search-wrap">
+    <div class="search-inner">
+      <div class="search-row">
+        <input class="search-input" type="text" data-ph-en="Search exhibitors by name or keyword…" data-ph-th="ค้นหาผู้แสดงสินค้า..." placeholder="Search exhibitors by name or keyword…">
+        <button class="search-btn" data-en="Search" data-th="ค้นหา">Search</button>
+      </div>
+      <div class="chips-row">
+        <div class="chip active" data-en="All Categories" data-th="ทุกหมวดหมู่">All Categories</div>
+        <div class="chip" data-en="❤️ Longevity Health &amp; Care" data-th="❤️ สุขภาพและการดูแลผู้สูงวัย">❤️ Longevity Health &amp; Care</div>
+        <div class="chip" data-en="🏃 Active Ageing &amp; Wellness" data-th="🏃 การมีชีวิตที่กระตือรือร้น">🏃 Active Ageing &amp; Wellness</div>
+        <div class="chip" data-en="🏙️ Smart Living &amp; Business" data-th="🏙️ การใช้ชีวิตอัจฉริยะ">🏙️ Smart Living &amp; Business</div>
+        <div class="chip" data-en="🤖 MedTech &amp; HealthTech" data-th="🤖 เมดเทค และเฮลท์เทค">🤖 MedTech &amp; HealthTech</div>
+        <div class="chip" data-en="💊 Pharma &amp; Biotech" data-th="💊 ยาและเทคโนโลยีชีวภาพ">💊 Pharma &amp; Biotech</div>
+        <div class="chip" data-en="📱 Digital Health" data-th="📱 สุขภาพดิจิทัล">📱 Digital Health</div>
+        <div class="chip" data-en="🏠 Senior Living" data-th="🏠 ที่พักผู้สูงอายุ">🏠 Senior Living</div>
+        <div class="chip" data-en="💰 Finance &amp; Insurtech" data-th="💰 การเงินและอินชัวร์เทค">💰 Finance &amp; Insurtech</div>
+      </div>
+    </div>
+  </div>
+  <div class="main-wrap">
+    <div class="sec-head">
+      <h2 data-en="Participating Exhibitors (Sellers)" data-th="ผู้แสดงสินค้า (ผู้ขาย)">Participating Exhibitors (Sellers)</h2>
+      <span class="cnt-pill">312 <span data-en="exhibitors" data-th="ราย">exhibitors</span></span>
+    </div>
+    <div class="ex-grid" id="ex-grid"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 2 · EXHIBITOR PROFILE + SLOTS        -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-profile" class="screen">
+  <div class="back-bar" onclick="go('directory')">← <span data-en="Back to Exhibitor Directory" data-th="กลับรายชื่อผู้แสดงสินค้า">Back to Exhibitor Directory</span></div>
+  <div class="profile-hero">
+    <div class="profile-hero-inner">
+      <div class="p-logo" style="background:rgba(255,255,255,.2)">ME</div>
+      <div class="p-info">
+        <div class="pcat" data-en="❤️ Longevity Health &amp; Care Innovation" data-th="❤️ นวัตกรรมสุขภาพและการดูแลผู้สูงวัย">❤️ Longevity Health &amp; Care Innovation</div>
+        <h1>MedEase Technologies Co., Ltd.</h1>
+        <p data-en="AI-powered remote patient monitoring systems and smart wearable devices for elderly care. Deployed across 200+ hospitals and care facilities in Southeast Asia, helping caregivers track health metrics in real time." data-th="ระบบติดตามผู้ป่วยระยะไกลด้วย AI และอุปกรณ์สวมใส่อัจฉริยะสำหรับการดูแลผู้สูงอายุ ใช้งานใน 200+ โรงพยาบาลและสถานดูแลผู้สูงอายุทั่วเอเชียตะวันออกเฉียงใต้">AI-powered remote patient monitoring systems and smart wearable devices for elderly care. Deployed across 200+ hospitals and care facilities in Southeast Asia.</p>
+        <div class="p-tags">
+          <span class="p-tag">AI Monitoring</span><span class="p-tag">Wearables</span><span class="p-tag">Remote Care</span><span class="p-tag">IoT</span><span class="p-tag">Elder Tech</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="profile-meta-bar">
+    <div class="p-meta-inner">
+      <div class="p-meta-item">📍 <strong>Booth EH-047</strong></div>
+      <div class="p-meta-item">🌐 <a href="#" style="color:var(--or-primary);font-weight:700">www.medease.co.th</a></div>
+      <div class="slots-live"><span class="dot-g"></span><span data-en="18 slots available this event" data-th="18 ช่วงเวลาว่าง">18 slots available this event</span></div>
+      <span class="tbc-pill" data-en="Session: 30–45 min (TBC)" data-th="ระยะเวลา: 30–45 นาที (TBC)">Session: 30–45 min (TBC)</span>
+    </div>
+  </div>
+  <div class="slot-section">
+    <div class="info-banner">
+      <div class="ib-icon">📌</div>
+      <p><strong data-en="How to book:" data-th="วิธีนัดหมาย:">How to book:</strong> <span data-en="Pick an available slot → fill your details → receive confirmation email with QR code. Show QR at the Business Matching Area desk on event day. No login or account needed." data-th="เลือกช่วงเวลา → กรอกข้อมูล → รับอีเมลยืนยันพร้อม QR Code แสดง QR ที่เคาน์เตอร์พื้นที่จับคู่ธุรกิจ ไม่ต้องสมัครสมาชิก">Pick an available slot → fill your details → receive confirmation email with QR code. Show QR at the Business Matching Area desk on event day. No login needed.</span></p>
+    </div>
+    <h3 style="font-size:14px;font-weight:700;margin-bottom:12px;font-family:'Prompt',sans-serif" data-en="Select Event Day" data-th="เลือกวันที่">Select Event Day</h3>
+    <div class="day-tabs">
+      <div class="day-tab active" onclick="setDay(this,'Wed 6 May')"><span class="dn">6</span><span data-en="WED · MAY" data-th="พ.ค. พุธ">WED · MAY</span></div>
+      <div class="day-tab" onclick="setDay(this,'Thu 7 May')"><span class="dn">7</span><span data-en="THU · MAY" data-th="พ.ค. พฤหัส">THU · MAY</span></div>
+      <div class="day-tab" onclick="setDay(this,'Fri 8 May')"><span class="dn">8</span><span data-en="FRI · MAY" data-th="พ.ค. ศุกร์">FRI · MAY</span></div>
+    </div>
+    <div class="slots-legend">
+      <div class="leg-item"><div class="leg-dot" style="background:white;border:1.5px solid var(--border)"></div><span data-en="Available" data-th="ว่าง">Available</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:var(--or-primary)"></div><span data-en="Selected" data-th="เลือกแล้ว">Selected</span></div>
+      <div class="leg-item"><div class="leg-dot" style="background:#E0E0E0"></div><span data-en="Booked" data-th="จองแล้ว">Booked</span></div>
+    </div>
+    <div class="slots-grid">
+      <div class="slot booked"><div>10:00</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot booked"><div>10:30</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>11:00</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>11:30</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>12:00</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot booked"><div>13:00</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot booked"><div>13:30</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot selected" onclick="pickSlot(this)"><div>14:00</div><div class="slot-sub" data-en="Selected ✓" data-th="เลือกแล้ว ✓">Selected ✓</div></div>
+      <div class="slot booked"><div>14:30</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>15:00</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>15:30</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot booked"><div>16:00</div><div class="slot-sub" data-en="Booked" data-th="จองแล้ว">Booked</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>16:30</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>17:00</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+      <div class="slot" onclick="pickSlot(this)"><div>17:30</div><div class="slot-sub" data-en="Available" data-th="ว่าง">Available</div></div>
+    </div>
+    <button class="proceed-btn" onclick="go('booking')">
+      <span data-en="PROCEED TO INQUIRY FORM →" data-th="กรอกแบบฟอร์มนัดหมาย →">PROCEED TO INQUIRY FORM →</span>
+    </button>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 3 · INQUIRY / BOOKING FORM           -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-booking" class="screen">
+  <div class="back-bar" onclick="go('profile')">← <span data-en="Back to Exhibitor Profile" data-th="กลับหน้าผู้แสดงสินค้า">Back to Exhibitor Profile</span></div>
+  <div class="form-outer">
+    <div class="no-login-banner">
+      <div class="nlb-icon">🔓</div>
+      <p data-en="No login required — Visitor (Buyer) booking. Fill in your details to confirm your session with this exhibitor (Seller)." data-th="ไม่ต้องสมัครสมาชิก — ผู้เข้าชม (ผู้ซื้อ) กรอกข้อมูลเพื่อยืนยันการนัดหมายกับผู้แสดงสินค้า (ผู้ขาย)">No login required — Visitor (Buyer) booking. Fill in your details to confirm your session with this exhibitor (Seller).</p>
+    </div>
+    <div class="session-pill">
+      <div class="sp-label" data-en="Your Selected Session" data-th="ช่วงเวลาที่เลือก">Your Selected Session</div>
+      <div class="sp-val">
+        <strong>MedEase Technologies Co., Ltd.</strong><br>
+        <span data-en="Wednesday 6 May 2026 · 14:00–14:30 · Business Matching Area, Hall EH · BITEC Bangna" data-th="วันพุธที่ 6 พฤษภาคม 2569 · 14:00–14:30 · พื้นที่จับคู่ธุรกิจ ฮอลล์ EH · ไบเทคบางนา">Wednesday 6 May 2026 · 14:00–14:30 · Business Matching Area, Hall EH · BITEC Bangna</span>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3 data-en="Your Details" data-th="ข้อมูลของคุณ">Your Details</h3>
+      <p class="f-sub" data-en="Your information will be shared with the exhibitor so they can prepare for your meeting." data-th="ข้อมูลของคุณจะถูกส่งให้ผู้แสดงสินค้าเพื่อเตรียมตัวก่อนการประชุม">Your information will be shared with the exhibitor so they can prepare for your meeting.</p>
+      <div class="form-grid">
+        <div class="fg"><label><span data-en="First Name" data-th="ชื่อ">First Name</span> <span class="req">*</span></label><input type="text" data-ph-en="e.g. Somchai" data-ph-th="เช่น สมชาย" placeholder="e.g. Somchai"></div>
+        <div class="fg"><label><span data-en="Last Name" data-th="นามสกุล">Last Name</span> <span class="req">*</span></label><input type="text" data-ph-en="e.g. Tanakorn" data-ph-th="เช่น ธนากร" placeholder="e.g. Tanakorn"></div>
+        <div class="fg"><label><span data-en="Organisation / Company" data-th="องค์กร / บริษัท">Organisation / Company</span> <span class="req">*</span></label><input type="text" data-ph-en="Your company name" data-ph-th="ชื่อบริษัทของคุณ" placeholder="Your company name"></div>
+        <div class="fg"><label><span data-en="Job Title" data-th="ตำแหน่ง">Job Title</span> <span class="req">*</span></label><input type="text" data-ph-en="e.g. Director" data-ph-th="เช่น ผู้อำนวยการ" placeholder="e.g. Director"></div>
+        <div class="fg"><label><span data-en="Email Address" data-th="อีเมล">Email Address</span> <span class="req">*</span></label><input type="email" placeholder="you@company.com"></div>
+        <div class="fg"><label><span data-en="Phone Number" data-th="เบอร์โทร">Phone Number</span> <span class="req">*</span></label><input type="tel" placeholder="+66 8x xxx xxxx"></div>
+        <div class="fg"><label><span data-en="Industry Sector" data-th="ภาคอุตสาหกรรม">Industry Sector</span> <span class="req">*</span></label>
+          <select>
+            <option data-en="Select industry…" data-th="เลือกอุตสาหกรรม…">Select industry…</option>
+            <option>Healthcare / Hospital</option><option>Pharmaceuticals</option>
+            <option>Technology</option><option>Finance / Insurance</option>
+            <option>Government / NGO</option><option>Academia</option><option>Other</option>
+          </select>
+        </div>
+        <div class="fg"><label><span data-en="Country" data-th="ประเทศ">Country</span> <span class="req">*</span></label>
+          <select><option>Thailand</option><option>Japan</option><option>Singapore</option><option>Other</option></select>
+        </div>
+        <div class="fg full"><label><span data-en="Topics / Meeting Objectives" data-th="หัวข้อ / วัตถุประสงค์">Topics / Meeting Objectives</span> <span class="req">*</span></label>
+          <textarea data-ph-en="Describe what you'd like to discuss. This helps the exhibitor prepare." data-ph-th="อธิบายสิ่งที่คุณต้องการพูดคุย เพื่อให้ผู้แสดงสินค้าเตรียมตัวล่วงหน้า" placeholder="Describe what you'd like to discuss. This helps the exhibitor prepare."></textarea>
+        </div>
+      </div>
+      <div class="pdpa-box">
+        <input type="checkbox" id="pdpa">
+        <label for="pdpa"><span data-en="I consent to my personal data being collected and shared with the exhibitor for this business matching session, per the " data-th="ข้าพเจ้ายินยอมให้เก็บรวบรวมและแบ่งปันข้อมูลส่วนบุคคลตาม ">I consent to my personal data being collected and shared with the exhibitor for this business matching session, per the </span><a href="#" data-en="Privacy Policy" data-th="นโยบายความเป็นส่วนตัว">Privacy Policy</a><span data-en=". Data retained for 12 months post-event. (PDPA — Thailand)" data-th=". เก็บข้อมูล 12 เดือนหลังงาน (PDPA — ประเทศไทย)">. Data retained for 12 months post-event. (PDPA — Thailand)</span></label>
+      </div>
+      <button class="submit-btn" onclick="go('confirmation')">
+        <span data-en="CONFIRM BOOKING &amp; SEND INQUIRY TO EXHIBITOR" data-th="ยืนยันการจอง และส่งข้อมูลให้ผู้แสดงสินค้า">CONFIRM BOOKING &amp; SEND INQUIRY TO EXHIBITOR</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 4 · CONFIRMATION + QR                -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-confirmation" class="screen">
+  <div class="conf-outer">
+    <div class="conf-card">
+      <div class="conf-icon">✓</div>
+      <h2 data-en="SESSION CONFIRMED!" data-th="ยืนยันการนัดหมายแล้ว!">SESSION CONFIRMED!</h2>
+      <p class="conf-th" id="conf-th-text"></p>
+      <p class="conf-sub" data-en="Your confirmation email with QR code, calendar invite, and session details has been sent to your inbox." data-th="อีเมลยืนยันพร้อม QR Code, นัดหมายปฏิทิน และรายละเอียดการประชุมถูกส่งให้คุณแล้ว">Your confirmation email with QR code, calendar invite, and session details has been sent to your inbox.</p>
+      <div class="sess-card">
+        <div class="sum-row"><div class="sum-ic">🏢</div><div><div class="sum-lbl" data-en="Exhibitor" data-th="ผู้แสดงสินค้า">Exhibitor</div><div class="sum-val">MedEase Technologies Co., Ltd.</div></div></div>
+        <div class="sum-row"><div class="sum-ic">📅</div><div><div class="sum-lbl" data-en="Date & Time" data-th="วันและเวลา">Date & Time</div><div class="sum-val" data-en="Wednesday, 6 May 2026 · 14:00 – 14:30" data-th="วันพุธ 6 พ.ค. 2569 · 14:00 – 14:30">Wednesday, 6 May 2026 · 14:00 – 14:30</div></div></div>
+        <div class="sum-row"><div class="sum-ic">📍</div><div><div class="sum-lbl" data-en="Location" data-th="สถานที่">Location</div><div class="sum-val" data-en="Business Matching Area, Hall EH · Table 7 · BITEC Bangna" data-th="พื้นที่จับคู่ธุรกิจ ฮอลล์ EH · โต๊ะ 7 · ไบเทคบางนา">Business Matching Area, Hall EH · Table 7 · BITEC Bangna</div></div></div>
+        <div class="sum-row"><div class="sum-ic">👤</div><div><div class="sum-lbl" data-en="Visitor" data-th="ผู้เข้าร่วม">Visitor</div><div class="sum-val">Somchai Tanakorn · Director of Operations</div></div></div>
+      </div>
+      <!-- QR CODE -->
+      <div class="qr-card">
+        <div class="qr-frame"><canvas id="qr-canvas" width="76" height="76"></canvas></div>
+        <div class="qr-details">
+          <h4 data-en="Your Check-in QR Code" data-th="QR Code เช็คอินของคุณ">Your Check-in QR Code</h4>
+          <p data-en="Show this at the Business Matching Area desk on arrival. Staff will scan to confirm your session and direct you to your table." data-th="แสดงที่เคาน์เตอร์พื้นที่จับคู่ธุรกิจเมื่อมาถึง เจ้าหน้าที่จะสแกนเพื่อยืนยัน">Show this at the Business Matching Area desk on arrival. Staff will scan to confirm your session and direct you to your table.</p>
+          <div class="qr-ref"><span data-en="Booking Ref: " data-th="รหัสการจอง: ">Booking Ref: </span><code>AT2026-BM-04872</code></div>
+        </div>
+      </div>
+      <!-- CALENDAR — CONFIRMED CHOICES -->
+      <div class="cal-label">
+        <span data-en="Add to Calendar" data-th="เพิ่มในปฏิทิน">Add to Calendar</span>
+        <span class="confirmed-chip" data-en="✅ Confirmed" data-th="✅ ยืนยันแล้ว">✅ Confirmed</span>
+      </div>
+      <div class="cal-grid">
+        <button class="cal-btn gcal">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#1A73E8" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-en="Add to Google Calendar" data-th="เพิ่มใน Google Calendar">Add to Google Calendar</span>
+        </button>
+        <button class="cal-btn outlook">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#0078D4" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span data-en="Download for Outlook (.ics)" data-th="ดาวน์โหลด Outlook (.ics)">Download for Outlook (.ics)</span>
+        </button>
+      </div>
+      <div class="reminder-note">
+        📧 <strong data-en="24-hour reminder:" data-th="แจ้งเตือน 24 ชั่วโมงก่อน:">24-hour reminder:</strong> <span data-en="An email with your QR code and session details will be resent automatically the day before your meeting." data-th="อีเมลพร้อม QR Code และรายละเอียดการประชุมจะถูกส่งให้อัตโนมัติวันก่อนการประชุม">An email with your QR code and session details will be resent automatically the day before your meeting.</span>
+      </div>
+      <div class="divider"></div>
+      <p class="conf-ref-note" data-en="Need to reschedule? Use the link in your confirmation email to contact the organiser." data-th="ต้องการเลื่อนนัด? ใช้ลิงก์ในอีเมลยืนยันเพื่อติดต่อผู้จัดงาน">Need to reschedule? Use the link in your confirmation email to contact the organiser.</p>
+      <button class="bk-btn" style="width:auto;padding:9px 22px;margin-top:14px;border-radius:10px;font-size:13px" onclick="go('directory')">
+        <span data-en="← Book Another Session" data-th="← จองการนัดหมายอื่น">← Book Another Session</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 5 · ADMIN DASHBOARD                  -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-admin" class="screen">
+  <div class="adm-header">
+    <div class="adm-header-inner">
+      <div>
+        <h1>ORGANISER DASHBOARD — AGEING INNOVATION EXPO 2026</h1>
+        <p>ageinginnovationexpo.com · Business Matching Management · KRS XPANSION CO.,LTD</p>
+      </div>
+      <div class="adm-live"><div class="adm-live-dot"></div>Live · 6 May 2026 · Day 1</div>
+    </div>
+  </div>
+  <div class="adm-tabs">
+    <div class="adm-tab active">📋 All Bookings (1,284)</div>
+    <div class="adm-tab">🔄 Reschedule Requests (3)</div>
+    <div class="adm-tab">🏢 Exhibitors (312)</div>
+    <div class="adm-tab">📊 Analytics</div>
+    <div class="adm-tab">⚙️ Settings</div>
+  </div>
+  <div class="adm-stats">
+    <div class="stat-card" style="--stat-color:var(--or-primary)"><div class="stat-num">1,284</div><div class="stat-lbl">Total Bookings</div></div>
+    <div class="stat-card" style="--stat-color:var(--green)"><div class="stat-num">1,198</div><div class="stat-lbl">Confirmed Sessions</div></div>
+    <div class="stat-card" style="--stat-color:var(--blue)"><div class="stat-num">312</div><div class="stat-lbl">Active Exhibitors</div></div>
+    <div class="stat-card" style="--stat-color:var(--logo-yellow)"><div class="stat-num">93.3%</div><div class="stat-lbl">Confirmation Rate</div></div>
+  </div>
+  <div class="adm-body">
+    <div class="tbl-toolbar">
+      <h3>Booking Log</h3>
+      <div class="tbl-btns">
+        <button class="t-btn t-btn-outline">⬇️ Export CSV</button>
+        <button class="t-btn t-btn-fill">+ Manual Booking</button>
+      </div>
+    </div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Ref ID</th><th>Visitor</th><th>Organisation</th><th>Exhibitor</th><th>Date</th><th>Time</th><th>Table</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody>
+          <tr><td><code style="font-size:11px">AT2026-BM-04872</code></td><td>Somchai T.</td><td>TechCare Co.</td><td>MedEase Technologies</td><td>6 May</td><td>14:00</td><td>T-07</td><td><span class="sb sc">Confirmed</span></td><td><button class="act-btn">View</button><button class="act-btn" onclick="toggleRsch()">Reschedule</button></td></tr>
+          <tr><td><code style="font-size:11px">AT2026-BM-04871</code></td><td>Nattaporn W.</td><td>Ministry of Health</td><td>SeniorCare Solutions</td><td>6 May</td><td>11:00</td><td>T-03</td><td><span class="sb sc">Confirmed</span></td><td><button class="act-btn">View</button><button class="act-btn" onclick="toggleRsch()">Reschedule</button></td></tr>
+          <tr><td><code style="font-size:11px">AT2026-BM-04870</code></td><td>Dr. Pornpimol K.</td><td>Chulalongkorn Univ.</td><td>AgeWell Pharma</td><td>6 May</td><td>13:30</td><td>T-11</td><td><span class="sb sp">Pending</span></td><td><button class="act-btn">View</button><button class="act-btn" style="color:var(--green)">Confirm ✓</button></td></tr>
+          <tr><td><code style="font-size:11px">AT2026-BM-04869</code></td><td>Tanawat S.</td><td>Robomed Asia</td><td>CareBot Robotics</td><td>7 May</td><td>10:00</td><td>T-02</td><td><span class="sb sc">Confirmed</span></td><td><button class="act-btn">View</button><button class="act-btn" onclick="toggleRsch()">Reschedule</button></td></tr>
+          <tr style="background:#EEF6FF"><td><code style="font-size:11px">AT2026-BM-04868</code></td><td>Lalida M.</td><td>GoldenAsia Capital</td><td>GoldenYears Finance</td><td>7 May</td><td>15:00</td><td>T-09</td><td><span class="sb sr">Reschedule Req.</span></td><td><button class="act-btn">View</button><button class="act-btn" style="color:var(--blue);font-weight:800" onclick="toggleRsch()">Process →</button></td></tr>
+          <tr><td><code style="font-size:11px">AT2026-BM-04867</code></td><td>Preecha A.</td><td>SmartLiving Group</td><td>SmartHome Senior</td><td>8 May</td><td>11:30</td><td>T-05</td><td><span class="sb sc">Confirmed</span></td><td><button class="act-btn">View</button><button class="act-btn" onclick="toggleRsch()">Reschedule</button></td></tr>
+          <tr><td><code style="font-size:11px">AT2026-BM-04866</code></td><td>Wirut P.</td><td>Digital Health TH</td><td>DigitalHealth Pro</td><td>8 May</td><td>14:30</td><td>T-01</td><td><span class="sb sx">Cancelled</span></td><td><button class="act-btn">View</button></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div id="rsch-panel" class="rsch-panel" style="display:none">
+      <h4>🔄 Reschedule Session — <span style="font-weight:400;color:var(--mid)">AT2026-BM-04872 · Somchai T. ↔ MedEase Technologies</span></h4>
+      <div class="rsch-row">
+        <div class="rfg"><label>New Date</label><select><option>6 May 2026 (Day 1)</option><option>7 May 2026 (Day 2)</option><option>8 May 2026 (Day 3)</option></select></div>
+        <div class="rfg"><label>New Time Slot</label><select><option>11:00 – 11:30</option><option>11:30 – 12:00</option><option>15:00 – 15:30</option><option>17:00 – 17:30</option></select></div>
+        <div class="rfg"><label>Table Assignment</label><select><option>Table 7 (current)</option><option>Table 3</option><option>Table 8</option><option>Table 12</option></select></div>
+        <button class="rsch-confirm" onclick="toggleRsch()">✉️ Confirm &amp; Notify Both</button>
+      </div>
+      <p class="rsch-note">⚡ Both visitor and exhibitor will receive updated confirmation emails with a new QR code automatically.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════ -->
+<!-- SCREEN 6 · SYSTEM FLOW OVERVIEW             -->
+<!-- ════════════════════════════════════════════ -->
+<div id="screen-flow" class="screen">
+  <div class="flow-outer">
+    <h2 class="flow-title">Recommended <span style="color:var(--or-primary)">System Flow</span></h2>
+    <p class="flow-sub">Complete operation diagram for all three user groups</p>
+    <!-- Visitor -->
+    <div class="flow-card visitor-flow">
+      <div class="flow-card-hdr">
+        <div class="flow-card-icon" style="background:var(--or-pale)">👥</div>
+        <h3>Visitor Flow <span style="font-size:11px;color:var(--mid);font-weight:400">— Public, No Login Required</span></h3>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step"><div class="fs-circle">1</div><div class="fs-label">Browse Directory</div><div class="fs-sub">Search &amp; filter 300+ exhibitors</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">2</div><div class="fs-label">View Profile</div><div class="fs-sub">Read about exhibitor + see slots</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">3</div><div class="fs-label">Pick Slot</div><div class="fs-sub">Choose available time (30–45 min)</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">4</div><div class="fs-label">Fill Form</div><div class="fs-sub">Name, org, email, topics</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">5</div><div class="fs-label">Instant Confirm</div><div class="fs-sub">Email + QR + .ics + Google Cal</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">6</div><div class="fs-label">24h Reminder</div><div class="fs-sub">Email with QR resent</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">7</div><div class="fs-label">Show QR</div><div class="fs-sub">Staff scans at BM Area desk</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle">8</div><div class="fs-label">Meet!</div><div class="fs-sub">Session at assigned table</div></div>
+      </div>
+    </div>
+    <!-- Exhibitor -->
+    <div class="flow-card exhibitor-flow">
+      <div class="flow-card-hdr">
+        <div class="flow-card-icon" style="background:var(--green-bg)">🏢</div>
+        <h3>Exhibitor Flow <span style="font-size:11px;color:var(--mid);font-weight:400">— Availability Managed by Organiser</span></h3>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">1</div><div class="fs-label">Submit Availability</div><div class="fs-sub">Send available blocks to organiser</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">2</div><div class="fs-label">Organiser Inputs</div><div class="fs-sub">Slots entered into admin system</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">3</div><div class="fs-label">Slots Go Live</div><div class="fs-sub">Visible on exhibitor profile</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">4</div><div class="fs-label">Booking Email</div><div class="fs-sub">Visitor name, org, topics sent</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">5</div><div class="fs-label">Prepare</div><div class="fs-sub">Review visitor inquiry</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">6</div><div class="fs-label">Reschedule?</div><div class="fs-sub">Request via email → organiser manages</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--logo-green)">7</div><div class="fs-label">Meet!</div><div class="fs-sub">At assigned BM Area table</div></div>
+      </div>
+    </div>
+    <!-- Organiser -->
+    <div class="flow-card organiser-flow">
+      <div class="flow-card-hdr">
+        <div class="flow-card-icon" style="background:#F5F5F5">⚙️</div>
+        <h3>Organiser Flow <span style="font-size:11px;color:var(--mid);font-weight:400">— Admin Dashboard</span></h3>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">1</div><div class="fs-label">Input Exhibitor Slots</div><div class="fs-sub">Enter availability on behalf of exhibitors</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">2</div><div class="fs-label">Monitor Real-time</div><div class="fs-sub">Dashboard: all sessions + status</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">3</div><div class="fs-label">Handle Reschedules</div><div class="fs-sub">Reassign slot → auto-notify both</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">4</div><div class="fs-label">Assign Tables</div><div class="fs-sub">Map table numbers to bookings</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">5</div><div class="fs-label">On-site Scan</div><div class="fs-sub">Staff scan QR at BM desk</div></div><div class="flow-arrow">›</div>
+        <div class="flow-step"><div class="fs-circle" style="background:var(--dark2)">6</div><div class="fs-label">Post-Event Report</div><div class="fs-sub">Export CSV, analytics for client</div></div>
+      </div>
+    </div>
+    <!-- Decisions table -->
+    <div class="decisions-table">
+      <h3>📌 Confirmed Design Decisions</h3>
+      <table>
+        <thead><tr><th>Decision</th><th>Choice</th><th>Reason</th></tr></thead>
+        <tbody>
+          <tr><td>Visitor login</td><td><span class="sb sc">No login required</span></td><td>Lower friction for 10,000 walk-in visitors</td></tr>
+          <tr><td>Calendar reminders</td><td><span class="sb sc">Email + QR + .ics + Google Cal + Outlook</span></td><td>Confirmed — LINE not required</td></tr>
+          <tr><td>Platform language</td><td><span class="sb sc">Bilingual TH + EN</span></td><td>Thai primary audience, international secondary</td></tr>
+          <tr><td>Session duration</td><td><span class="sb sp">30–45 min (TBC)</span></td><td>Confirm with client before development starts</td></tr>
+          <tr><td>Exhibitor slot input</td><td><span class="sb sc">Organiser inputs on exhibitor's behalf</span></td><td>Simpler ops for 300+ exhibitors</td></tr>
+          <tr><td>Rescheduling</td><td><span class="sb sc">Organiser-managed via admin dashboard</span></td><td>Single control point, auto-notifies both parties</td></tr>
+          <tr><td>On-site check-in</td><td><span class="sb sc">QR code scan at BM Area desk</span></td><td>No app required; staff-operated</td></tr>
+          <tr><td>Visitor / Exhibitor terminology</td><td><span class="sb sc">Buyer (Visitor) / Seller (Exhibitor)</span></td><td>Matches live website nav: ageinginnovationexpo.com/buyer-register &amp; /seller-register</td></tr>
+          <tr><td>ZipEvent integration</td><td><span class="sb sp">API — credentials TBD</span></td><td>Action: request API docs from ZipEvent</td></tr>
+          <tr><td>Website integration</td><td><span class="sb" style="background:var(--blue-bg);color:var(--blue)">Subdomain + link from nav</span></td><td>ageinginnovationexpo.com is live — Business Matching nav item is a placeholder ready to link</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="screen-lbl" id="screen-lbl">Screen 1 · Exhibitor Directory</div>
+
+<script>
+/* ── EXHIBITOR DATA ── */
+const exhibitors = [
+  {n:"MedEase Technologies",c:"Longevity Health & Care",d:"AI-powered remote patient monitoring and smart wearables for elderly care across Southeast Asia.",s:18,b:"EH-047",bg:"linear-gradient(135deg,#1A73E8,#5094ED)",ab:"ME",ac:"#1A73E8"},
+  {n:"AgeWell Pharmaceuticals",c:"Pharma & Biotech",d:"Specialist medicines and supplements formulated for age-related conditions and chronic disease management.",s:12,b:"EH-112",bg:"linear-gradient(135deg,#D95F00,#F07800)",ab:"AW",ac:"#F07800"},
+  {n:"CareBot Robotics",c:"MedTech & HealthTech",d:"Autonomous companion and mobility-assist robots for home care and care facility environments.",s:9,b:"EH-033",bg:"linear-gradient(135deg,#5C2D91,#8B4EC8)",ab:"CB",ac:"#5C2D91"},
+  {n:"GoldenYears Finance",c:"Finance & Insurtech",d:"Financial planning, reverse mortgage, and retirement investment products for Thailand's ageing population.",s:22,b:"EH-201",bg:"linear-gradient(135deg,#B8860B,#D4AC0D)",ab:"GY",ac:"#B8860B"},
+  {n:"Senior Living Co.",c:"Smart Living & Business",d:"Premium residential care communities and assisted living facilities across Bangkok and Chiang Mai.",s:7,b:"EH-089",bg:"linear-gradient(135deg,#1B6B2E,#27AE60)",ab:"SL",ac:"#1B6B2E"},
+  {n:"DigitalHealth Pro",c:"Digital Health",d:"Telehealth platform connecting elderly patients with specialist doctors via video consultation 24/7.",s:15,b:"EH-154",bg:"linear-gradient(135deg,#C0392B,#E74C3C)",ab:"DH",ac:"#C0392B"},
+  {n:"SmartHome Senior",c:"Active Ageing & Wellness",d:"Home automation for elderly independence — voice controls, fall detection, and safety sensors.",s:11,b:"EH-078",bg:"linear-gradient(135deg,#117864,#1ABC9C)",ab:"SS",ac:"#117864"},
+  {n:"NutriAge Sciences",c:"Active Ageing & Wellness",d:"Clinically-tested nutritional supplements and personalised meal planning for healthy ageing.",s:14,b:"EH-167",bg:"linear-gradient(135deg,#D35400,#E67E22)",ab:"NA",ac:"#D35400"},
+];
+const grid = document.getElementById('ex-grid');
+exhibitors.forEach(e => {
+  const c = document.createElement('div');
+  c.className='ex-card'; c.style.setProperty('--card-accent',e.ac);
+  c.innerHTML=`<div class="card-logo" style="background:${e.bg}">${e.ab}</div>
+    <div class="card-name">${e.n}</div>
+    <div class="card-cat">${e.c}</div>
+    <div class="card-desc">${e.d}</div>
+    <div class="card-ft">
+      <div class="slots-ok"><span class="dot-g"></span>${e.s} slots open</div>
+      <span class="card-booth">Booth ${e.b}</span>
+    </div>
+    <button class="bk-btn" onclick="go('profile')">View & Book →</button>`;
+  grid.appendChild(c);
+});
+
+/* ── NAVIGATION ── */
+const SL = {
+  directory:'Screen 1 · Exhibitor Directory (Visitor — Buyer)',
+  profile:'Screen 2 · Exhibitor Profile + Slot Picker (Seller)',
+  booking:'Screen 3 · Inquiry / Booking Form',
+  confirmation:'Screen 4 · Confirmation + QR Code',
+  admin:'Screen 5 · Organiser Admin Dashboard',
+  flow:'Screen 6 · System Flow Overview',
+};
+const tabs = ['directory','profile','booking','confirmation','admin','flow'];
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById('screen-'+id).classList.add('active');
+  document.getElementById('screen-lbl').textContent=SL[id];
+  document.querySelectorAll('.nav-tab').forEach((t,i)=>t.classList.toggle('active',tabs[i]===id));
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='confirmation'){drawQR(); applyTHConf();}
+}
+
+/* ── SLOTS ── */
+function pickSlot(el){
+  document.querySelectorAll('.slot:not(.booked)').forEach(s=>{
+    s.classList.remove('selected');
+    const sub=s.querySelector('.slot-sub');
+    if(sub){ sub.setAttribute('data-en','Available'); sub.setAttribute('data-th','ว่าง'); if(currentLang==='en')sub.textContent='Available'; else sub.textContent='ว่าง'; }
+  });
+  el.classList.add('selected');
+  const sub=el.querySelector('.slot-sub');
+  if(sub){ sub.setAttribute('data-en','Selected ✓'); sub.setAttribute('data-th','เลือกแล้ว ✓'); if(currentLang==='en')sub.textContent='Selected ✓'; else sub.textContent='เลือกแล้ว ✓'; }
+}
+function setDay(el,label){
+  document.querySelectorAll('.day-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+/* ── FILTER CHIPS ── */
+document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active'));
+  c.classList.add('active');
+}));
+
+/* ── RESCHEDULE PANEL ── */
+function toggleRsch(){
+  const p=document.getElementById('rsch-panel');
+  p.style.display=p.style.display==='none'?'block':'none';
+  if(p.style.display==='block')p.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+
+/* ── QR CODE GENERATOR ── */
+function drawQR(){
+  const canvas=document.getElementById('qr-canvas'); if(!canvas)return;
+  const ctx=canvas.getContext('2d'), s=76, c=s/10;
+  ctx.fillStyle='white'; ctx.fillRect(0,0,s,s);
+  ctx.fillStyle=var_dark='#1A1A1A';
+  // Draw finder patterns (3 corners)
+  [[0,0],[0,7],[7,0]].forEach(([r,col])=>{
+    ctx.fillStyle='#1A1A1A'; ctx.fillRect(col*c,r*c,7*c,7*c);
+    ctx.fillStyle='white'; ctx.fillRect((col+1)*c,(r+1)*c,5*c,5*c);
+    ctx.fillStyle='#1A1A1A'; ctx.fillRect((col+2)*c,(r+2)*c,3*c,3*c);
+  });
+  // Data modules
+  const d=[1,0,1,1,0,0,1,0,1,1,0,1,0,1,1,0,1,0,0,1,1,0,1,0,1,1,0,0,1,0,1,1,0,1,0,1,0,1,1,0,1,0,1,0,0,1,1,0,1,1];
+  let i=0;
+  for(let r=0;r<10;r++){
+    for(let col=0;col<10;col++){
+      if((r<8&&col<8)||(r<3&&col>=7)||(r>=7&&col<3))continue;
+      if(d[i%d.length]){ctx.fillStyle='#1A1A1A'; ctx.fillRect(col*c,r*c,c-.5,c-.5);}
+      i++;
+    }
+  }
+  // Orange accent dot in centre
+  ctx.fillStyle='#F07800';
+  ctx.fillRect(4*c,4*c,2*c,2*c);
+}
+
+/* ── BILINGUAL TOGGLE ── */
+let currentLang='en';
+function setLang(lang){
+  currentLang=lang;
+  document.getElementById('btn-en').classList.toggle('active',lang==='en');
+  document.getElementById('btn-th').classList.toggle('active',lang==='th');
+  document.querySelectorAll('[data-en],[data-th]').forEach(el=>{
+    const v=el.getAttribute('data-'+lang);
+    if(v!==null&&v!=='')el.textContent=v;
+  });
+  document.querySelectorAll('[data-ph-en],[data-ph-th]').forEach(el=>{
+    const ph=el.getAttribute('data-ph-'+lang);
+    if(ph)el.placeholder=ph;
+  });
+  applyTHConf();
+}
+function applyTHConf(){
+  const el=document.getElementById('conf-th-text');
+  if(el)el.textContent=currentLang==='th'?'การประชุมจับคู่ธุรกิจของคุณได้รับการยืนยันแล้ว':'';
+}
+</script>
+</body>
+</html>
